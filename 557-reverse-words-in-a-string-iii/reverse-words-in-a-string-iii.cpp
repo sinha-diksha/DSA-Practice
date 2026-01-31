@@ -8,21 +8,18 @@ public:
             char it=s[i];
             if(it!=' '){
                 st.push(it);
-            }else{
-                while(!st.empty()){
-                    ans+=st.top();
-                    st.pop();
-                    
-                }
-                ans+=" ";
             }
-            if(i==n-1){
+            if(it==' ' || i==n-1){
                 while(!st.empty()){
                     ans+=st.top();
                     st.pop();
                     
                 }
             }
+            if(it==' '){
+                ans+=it;
+            }
+            
         }
 
         return ans;
