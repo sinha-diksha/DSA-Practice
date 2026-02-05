@@ -11,7 +11,6 @@ public:
                 
                 int val= abs(nums[i])/n;
                 val = nums[i] + (val*n);
-                cout<<val<<endl;
                 int newI=(i-abs(val) + n)%n;
                 ans[i]=nums[newI];
             }else{
