@@ -15,9 +15,6 @@ public:
                 }
             }
         }
-        // if(firstBit==-1 || secondBit==-1){
-        //     return 0;
-        // }
         return ans;
     }
 };
