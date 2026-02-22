@@ -18,7 +18,6 @@ public:
         if(firstBit==-1 || secondBit==-1){
             return 0;
         }
-        cout<<ans<<endl;
         return ans;
     }
 };
