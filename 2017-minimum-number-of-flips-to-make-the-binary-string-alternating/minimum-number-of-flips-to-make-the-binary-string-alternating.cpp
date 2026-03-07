@@ -19,7 +19,8 @@ public:
             if(s2[i]!=alt2[i]) dif2++;
         }
         ans=min(dif1, dif2);
-        for(int i=n; i<(2*n); i++){
+        int v=2*n;
+        for(int i=n; i<v; i++){
             int leave=i-n;
             if(s2[leave]!=alt1[leave]) dif1--;
             if(s2[leave]!=alt2[leave]) dif2--;
