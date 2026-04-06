@@ -53,7 +53,6 @@ public:
                         x=newX;
                     }
                 }
-                cout<<x<<" "<<y<<endl;
                 long val=x*x + y*y;
                 ans=max(ans,val);
             }
