@@ -44,7 +44,7 @@ public:
                     }
                 }else{
                     int value= direction=='E'?1:-1;
-                    // y will change
+                    // x will change
                     for(int j=0; j<commands[i]; j++){
                         int newX=x+value;
                         if(obMap.count({newX,y})>0){
