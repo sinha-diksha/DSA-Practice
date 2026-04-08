@@ -5,7 +5,6 @@ public:
         int n=queries.size();
         int m=nums.size();
         for(int i=0; i<n; i++){
-            int r=queries[i][1];
             int k=queries[i][2];
             int v=queries[i][3];
             int idx=queries[i][0];
