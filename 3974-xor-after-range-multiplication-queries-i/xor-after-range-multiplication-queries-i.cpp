@@ -12,9 +12,7 @@ public:
             int v=queries[i][3];
             int idx=l;
             while(idx<=r){
-               
-                long  c=((long)nums[idx] * v)%mod;
-                nums[idx]=c;
+                nums[idx]=((long)nums[idx] * v)%mod;;
                 idx+=k;
             }
         }
