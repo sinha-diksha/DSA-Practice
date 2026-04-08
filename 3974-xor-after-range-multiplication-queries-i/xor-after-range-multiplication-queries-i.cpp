@@ -9,7 +9,7 @@ public:
             int k=queries[i][2];
             int v=queries[i][3];
             int idx=queries[i][0];
-            while(idx<=r){
+            while(idx<=queries[i][1]){
                 nums[idx]=((long)nums[idx] * v)%((long)1e9+7);
                 idx+=k;
             }
