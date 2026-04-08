@@ -1,7 +1,7 @@
 class Solution {
 public:
     int xorAfterQueries(vector<int>& nums, vector<vector<int>>& queries) {
-        long ans=0;
+        int ans=0;
         int n=queries.size();
         int m=nums.size();
         int mod=(1e9+7);
