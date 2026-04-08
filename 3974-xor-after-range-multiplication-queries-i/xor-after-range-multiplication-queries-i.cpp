@@ -5,10 +5,9 @@ public:
         int n=queries.size();
         int m=nums.size();
         for(int i=0; i<n; i++){
-            int v=queries[i][3];
             int idx=queries[i][0];
             while(idx<=queries[i][1]){
-                nums[idx]=((long)nums[idx] * v)%((long)1e9+7);
+                nums[idx]=((long)nums[idx] * queries[i][3])%((long)1e9+7);
                 idx+=queries[i][2];
             }
         }
