@@ -6,11 +6,10 @@ public:
         int m=nums.size();
         int mod=(1e9+7);
         for(int i=0; i<n; i++){
-            int l=queries[i][0];
             int r=queries[i][1];
             int k=queries[i][2];
             int v=queries[i][3];
-            int idx=l;
+            int idx=queries[i][0];
             while(idx<=r){
                 nums[idx]=((long)nums[idx] * v)%mod;;
                 idx+=k;
