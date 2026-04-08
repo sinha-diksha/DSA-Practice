@@ -14,7 +14,7 @@ public:
             while(idx<=r){
                 long  a=nums[idx]%mod;
                 long b=v%mod;
-                long long c=(a*b)%mod;
+                long  c=(a*b)%mod;
                 nums[idx]=c;
                 idx+=k;
             }
