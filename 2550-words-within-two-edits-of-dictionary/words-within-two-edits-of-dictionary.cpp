@@ -12,6 +12,7 @@ public:
                     if(queries[i][k]!=dictionary[j][k]){
                         dis++;
                     }
+                    if(dis>2) break;
                 }
 
                 if(dis<=2){
