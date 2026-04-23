@@ -30,7 +30,7 @@ public:
                 
                 long long leftSum= leftLen >0?prefSum[nums[i]][leftLen-1]:0;
                 long long rightSum=prefSum[nums[i]][vecSize-1]-leftSum-i;
-                long long val=(long long)(((long long)i*leftLen)-leftSum) + (long long)((long long)rightSum - ((vecSize-leftLen-1) * (long long)i));
+                long long val=(((long long)i*leftLen)-leftSum) + (rightSum - ((vecSize-leftLen-1) * (long long)i));
                 ans[i]=val;
             }
         }
