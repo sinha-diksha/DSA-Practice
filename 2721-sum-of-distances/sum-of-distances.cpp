@@ -1,37 +1,43 @@
 class Solution {
 public:
     vector<long long> distance(vector<int>& nums) {
-        
-        int n=nums.size();
-        vector<long long> ans(n);
-        unordered_map<int,vector<int>> mp;
-        for(int i=0; i<n; i++){
+        int n = nums.size();
+        vector<long long> ans(n, 0);
+
+        unordered_map<int, vector<int>> mp;
+
+        // group indices
+        for (int i = 0; i < n; i++) {
             mp[nums[i]].push_back(i);
         }
-        unordered_map<int,vector<long long>> prefSum;
-        for(auto it:mp){
-            vector<int> second=it.second;
-            long long sum=0;
-            int size=second.size();
-            vector<long long> prefixSum(size);
-            prefixSum[0]=second[0];
-            for(int i=1; i<size; i++){
-                prefixSum[i]=prefixSum[i-1]+second[i];
+
+        // process each group once
+        for (auto &it : mp) {
+            vector<int> &vec = it.second;
+            int sz = vec.size();
+
+            vector<long long> pref(sz);
+            pref[0] = vec[0];
+            for (int i = 1; i < sz; i++) {
+                pref[i] = pref[i - 1] + vec[i];
             }
-            prefSum[it.first]=prefixSum;
-        }
-        for(int i=0; i<n; i++){
-            int vecSize=mp[nums[i]].size();
-            if(vecSize==1){
-                ans[i]=0;
-            }else{
-                int index=lower_bound(mp[nums[i]].begin(), mp[nums[i]].end(), i)-mp[nums[i]].begin();
-                int leftLen=index;
-                
-                long long leftSum= leftLen >0?prefSum[nums[i]][leftLen-1]:0;
-                long long rightSum=prefSum[nums[i]][vecSize-1]-leftSum-i;
-                long long val=(((long long)i*leftLen)-leftSum) + (rightSum - ((vecSize-leftLen-1) * (long long)i));
-                ans[i]=val;
+
+            for (int k = 0; k < sz; k++) {
+                int idx = vec[k];
+
+                long long left = 0;
+                if (k > 0) {
+                    left = (long long)idx * k - pref[k - 1];
+                }
+
+                long long right = 0;
+                if (k < sz - 1) {
+                    long long rightSum = pref[sz - 1] - pref[k];
+                    long long countRight = sz - k - 1;
+                    right = rightSum - (long long)idx * countRight;
+                }
+
+                ans[idx] = left + right;
             }
         }
 
