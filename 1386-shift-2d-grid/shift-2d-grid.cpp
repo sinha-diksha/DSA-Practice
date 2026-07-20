@@ -12,7 +12,6 @@ public:
         }
 
         k = k%n;
-        cout<<k<<endl;
         
         reverse(v.begin()+n-k, v.end());
         reverse(v.begin(), v.begin()+n-k);
