@@ -11,23 +11,11 @@ public:
             }
         }
 
-        // for(int i=0; i<n; i++){
-        //     cout<<v[i]<<" ";
-        // }
-        // cout<<endl;
         k = k%n;
         cout<<k<<endl;
         
         reverse(v.begin()+n-k, v.end());
-        // for(int i=0; i<n; i++){
-        //     cout<<v[i]<<" ";
-        // }
-        // cout<<endl;
         reverse(v.begin(), v.begin()+n-k);
-        // for(int i=0; i<n; i++){
-        //     cout<<v[i]<<" ";
-        // }
-        // cout<<endl;
         reverse(v.begin(), v.end());
         for(int i=0; i<n; i++){
             int c = i%col;
