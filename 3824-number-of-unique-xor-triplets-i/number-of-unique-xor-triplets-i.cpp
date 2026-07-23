@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int uniqueXorTriplets(vector<int>& nums) {
+        int n=nums.size();
+        if(n==1 || n==2){
+            return n;
+        }
+
+        int power=0;
+        while(n>=2){
+            power++;
+            n/=2;
+        }
+
+        return pow(2,power+1);
+
+    }
+};
