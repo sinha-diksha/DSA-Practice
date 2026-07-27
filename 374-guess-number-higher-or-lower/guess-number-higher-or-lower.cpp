@@ -13,8 +13,7 @@ public:
         int low = 0;
         int high = n;
         
-        bool guessed = false;
-        while(!guessed){
+        while(true){
             int mid = low + (high - low)/2;
             int value = guess(mid);
             if(value==0){
