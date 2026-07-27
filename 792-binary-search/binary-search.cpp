@@ -1,20 +1,20 @@
 class Solution {
 public:
+    int solve(vector<int>& nums, int n, int low, int high, int target){
+        if(low>high){
+            return -1;
+        }
+        int mid = low + (high - low)/2;
+        if(nums[mid] == target){
+            return mid;
+        }
+        else if(target > nums[mid]){
+            return solve(nums, n, mid+1, high, target);
+        }
+        return solve(nums, n, low, mid-1, target);
+    }
     int search(vector<int>& nums, int target) {
         int n=nums.size();
-        int low=0;
-        int high=n-1;
-        while(low<=high){
-            int mid = low + (high - low)/2;
-            if(nums[mid]==target){
-                return mid;
-            }else if(target > nums[mid]){
-                low=mid+1;
-            }else{
-                high=mid-1;
-            }
-        }
-
-        return -1;
+        return solve(nums,n,0,n-1, target);
     }
 };
