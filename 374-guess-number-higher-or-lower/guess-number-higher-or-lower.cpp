@@ -13,7 +13,7 @@ public:
         int low = 0;
         int high = n;
         
-        while(true){
+        while(low<=high){
             int mid = low + (high - low)/2;
             int value = guess(mid);
             if(value==0){
