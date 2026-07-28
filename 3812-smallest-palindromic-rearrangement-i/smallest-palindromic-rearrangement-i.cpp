@@ -6,22 +6,27 @@ public:
        int r=n-1;
        int mid=n/2;
        string ans=s;
-       sort(s.begin(), s.end());
-       int i=0;
-       while(i<n){
-        if(s[i]==s[i+1]){
-            char ch=s[i];
-            ans[l]=ch;
-            ans[r]=ch;
-            i=i+2;
-            l++;
-            r--;
-        }else{
-            ans[mid]=s[i];
-            i++;
-        }
+       vector<int> countChar(26);
+       for(auto it:s){
+        countChar[it-'a']++;
        }
 
+       for(int i=0; i<26; i++){
+        char ch='a'+i;
+        int count=countChar[i];
+        while(count>=2){
+            ans[l]=ch;
+            ans[r]=ch;
+            l++;
+            r--;
+            count-=2;
+        }
+
+        if(count==1){
+            ans[mid]=ch;
+            count-=1;
+        }
+       }
 
        return ans;
     }
