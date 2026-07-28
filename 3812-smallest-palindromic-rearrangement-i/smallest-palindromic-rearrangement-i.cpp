@@ -10,8 +10,9 @@ public:
        int i=0;
        while(i<n){
         if(s[i]==s[i+1]){
-            ans[l]=s[i];
-            ans[r]=s[i];
+            char ch=s[i];
+            ans[l]=ch;
+            ans[r]=ch;
             i+=2;
             l++;
             r--;
