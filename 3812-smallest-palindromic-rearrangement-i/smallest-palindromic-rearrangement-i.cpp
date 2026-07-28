@@ -24,7 +24,7 @@ public:
 
         if(count==1){
             ans[mid]=ch;
-            count-=1;
+            count=0;
         }
        }
 
