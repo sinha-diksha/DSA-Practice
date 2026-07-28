@@ -1,27 +1,22 @@
 class Solution {
 public:
     string smallestPalindrome(string s) {
-       map<char,int> mp;
-       for(auto it:s){
-        mp[it]++;
-       }
-       string ans=s;
-       int n=s.length();
+       int n = s.length();
        int l=0;
        int r=n-1;
-       for(auto it:mp){
-        char ch = it.first;
-        int count = it.second;
-        while(count>=2){
-            ans[l] = ch;
-            ans[r]=ch;
-            l++; r--;
-            count-=2;
-        }
-
-        if(count==1){
-            ans[n/2]=ch;
-            count-=1;
+       string ans=s;
+       sort(s.begin(), s.end());
+       int i=0;
+       while(i<n){
+        if(s[i]==s[i+1]){
+            ans[l]=s[i];
+            ans[r]=s[i];
+            i+=2;
+            l++;
+            r--;
+        }else{
+            ans[n/2]=s[i];
+            i++;
         }
        }
 
