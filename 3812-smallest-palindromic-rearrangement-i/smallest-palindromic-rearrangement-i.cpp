@@ -13,7 +13,7 @@ public:
             char ch=s[i];
             ans[l]=ch;
             ans[r]=ch;
-            i+=2;
+            i=i+2;
             l++;
             r--;
         }else{
