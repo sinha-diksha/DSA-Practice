@@ -4,6 +4,7 @@ public:
        int n = s.length();
        int l=0;
        int r=n-1;
+       int mid=n/2;
        string ans=s;
        sort(s.begin(), s.end());
        int i=0;
@@ -15,7 +16,7 @@ public:
             l++;
             r--;
         }else{
-            ans[n/2]=s[i];
+            ans[mid]=s[i];
             i++;
         }
        }
