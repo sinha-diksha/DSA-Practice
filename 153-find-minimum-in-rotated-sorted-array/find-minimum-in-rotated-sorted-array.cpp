@@ -7,6 +7,9 @@ public:
         int high=n-1;
         while(low<=high){
             int mid = low + (high-low)/2;
+            if (nums[low] <= nums[high]) {
+                return min(mini, nums[low]);
+            }
             if(nums[low]<=nums[mid]){
                 mini=min(mini, nums[low]);
                 low=mid+1;
