@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool isPossible(int mid, vector<int>& weights, int days){
-        int count=0;
+        int count=1;
         int sum=0;
         for(int i=0; i<weights.size(); i++){
             if(sum + weights[i] <=mid)sum+=weights[i];
@@ -10,7 +10,7 @@ public:
                 sum=weights[i];
             }
         }
-        return count + 1<=days;
+        return count<=days;
     }
     int shipWithinDays(vector<int>& weights, int days) {
         int n=weights.size();
@@ -20,7 +20,6 @@ public:
         while(low<=high){
             int mid = low + (high - low)/2;
             if(isPossible(mid, weights, days)){
-                cout<<mid<<endl;
                 ans=mid;
                 high=mid-1;
             }else{
