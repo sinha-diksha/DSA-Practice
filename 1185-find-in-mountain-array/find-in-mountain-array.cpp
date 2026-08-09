@@ -22,7 +22,6 @@ public:
                 h=mid;
             }
         }
-        cout<<l<<endl;
         int l1=0;
         int h1=l;
         int ans1=INT_MAX;
