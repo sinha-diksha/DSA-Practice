@@ -16,8 +16,16 @@ class TrieNode{
         links[ch-'a']=newNode;
     }
 
-    void isEnd(){
+    void setEnd(){
         isFinished=true;
+    }
+
+    bool isEnd(){
+        return isFinished;
+    }
+
+    TrieNode* nextNode(char ch){
+        return links[ch-'a'];
     }
 };
 class Trie {
@@ -34,10 +42,10 @@ public:
                 TrieNode* newNode= new TrieNode;
                 node->put(word[i], newNode);
             }
-            node=node->links[word[i]-'a'];
+            node=node->nextNode(word[i]);
         }
         
-        node->isEnd();
+        node->setEnd();
     }
     
     bool search(string word) {
@@ -46,9 +54,9 @@ public:
             if(!node->isContains(word[i])){
                 return false;
             }
-            node=node->links[word[i]-'a'];
+            node=node->nextNode(word[i]);
         }
-        return node->isFinished;
+        return node->isEnd();
     }
     
     bool startsWith(string prefix) {
@@ -57,7 +65,7 @@ public:
             if(!node->isContains(prefix[i])){
                 return false;
             }
-            node=node->links[prefix[i]-'a'];
+            node=node->nextNode(prefix[i]);
         }
         return true;
     }
