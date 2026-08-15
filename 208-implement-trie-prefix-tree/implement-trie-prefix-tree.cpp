@@ -34,7 +34,6 @@ public:
                 TrieNode* newNode= new TrieNode;
                 node->put(word[i], newNode);
             }
-            cout<<node->links[word[i]-'a']<<endl;
             node=node->links[word[i]-'a'];
         }
         
