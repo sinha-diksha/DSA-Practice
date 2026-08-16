@@ -16,9 +16,9 @@ public:
                 }
                 l++;
             }
-            ans=max(ans,r-l+1 );
+            ans=max(ans,r-l );
             r++;
         }
-        return ans-1;
+        return ans;
     }
 };
