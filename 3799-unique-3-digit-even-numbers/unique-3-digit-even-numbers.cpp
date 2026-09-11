@@ -1,7 +1,6 @@
 class Solution {
 public:
     int totalNumbers(vector<int>& digits) {
-        int count=0;
         int n=digits.size();
         set<vector<int>> st;
         for(int i=0; i<n; i++){
