@@ -13,7 +13,6 @@ public:
             auto f = q.front();
             q.pop();
             string str=f.first;
-            cout<<str<<endl;
             if(str==endWord) return f.second;
             for(int i=0; i<str.length(); i++){
                 string s=str;
