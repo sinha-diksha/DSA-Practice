@@ -14,9 +14,6 @@ public:
                 sum+=(d*d);
                 x/=10;
             }
-            if(sum==1){
-                return true;
-            }
             n=sum;
         }
         return true;
