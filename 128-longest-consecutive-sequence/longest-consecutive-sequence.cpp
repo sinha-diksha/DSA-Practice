@@ -7,15 +7,15 @@ public:
         }
         int ans=0;
         for(auto it:mp){
+            if(mp.count(it.first - 1)>0){
+                continue;
+            }
             int val = it.first;
             int count=1;
-            int value = val+1;
-            while(mp.count(value)>0){
-                count+=mp[value];
-                mp.erase(value);
-                value++;
+            while(mp.count(val+1)>0){
+                count++;
+                val++;
             }
-            mp[val]=count;
             ans=max(ans, count);
         }
         return ans;
