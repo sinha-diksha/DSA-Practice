@@ -19,7 +19,6 @@ public:
                 }else{
                     int v=mp[target]/2;
                     ans+=v;
-                    mp[target]-=(v*2);
                 }
 
             }
