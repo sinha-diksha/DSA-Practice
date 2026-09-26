@@ -11,7 +11,7 @@ public:
         int i=0;
         int j=0;
         while(j<n){
-            if(s[i]!='(' && s[i]!=')'){
+            if(s[i]!='('){
                 ans+=s[i];
                 i++;
                 j++;
