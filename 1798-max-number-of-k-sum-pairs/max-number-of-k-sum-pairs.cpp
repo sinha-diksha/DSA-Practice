@@ -6,14 +6,14 @@ public:
             mp[it]++;
         }
         int ans=0;
-        for(auto it:mp){
+        for(auto& it:mp){
             int val =it.first;
             int times= it.second;
             int target = k - val;
             if(mp.count(target)){
                 if(val!=target){
                     int v=min(times, mp[target]);
-                    mp[val]-=v;
+                    it.second-=v;
                     mp[target]-=v;
                     ans+=v;
                 }else{
