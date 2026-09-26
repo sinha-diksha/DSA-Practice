@@ -20,9 +20,7 @@ public:
                 while(s[j]!=')'){
                     j++;
                 }
-                string a = s.substr(i+1, j-1-i-1+1);
-                // cout<<a<<endl;
-                // cout<<mp[a]<<a.length()<<endl;
+                string a = s.substr(i+1, j-1-i);
                 if(mp.count(a)){
                     ans+=mp[a];
                 }else{
@@ -31,8 +29,6 @@ public:
                 j++;
                 i=j;
             }
-
-            // cout<<ans<<endl;
         }
 
         return ans;
