@@ -21,8 +21,6 @@ public:
                     mp[target]-=(2*v);
                 }
             }
-
-            cout<<val<<" "<<ans<<endl;
         }
 
 
