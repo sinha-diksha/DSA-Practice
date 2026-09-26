@@ -1,22 +1,12 @@
 class Solution {
 public:
     bool checkIfExist(vector<int>& arr) {
-        unordered_set<int> seen;
-
-        for (int x : arr) {
-            if (seen.count(2 * x)) {
-                return true;
-            }
-
-            if (x % 2 == 0 && seen.count(x / 2)) {
-                return true;
-            }
-
-            seen.insert(x);
+        unordered_map<int,int> mp;
+        for(auto it:arr){
+            if(mp.count(it*2)) return true;
+            if(it%2==0 && mp.count(it/2)) return true;
+            mp[it]++;
         }
-
         return false;
     }
 };
-// TC: O(2n)
-//SC: O(N)
