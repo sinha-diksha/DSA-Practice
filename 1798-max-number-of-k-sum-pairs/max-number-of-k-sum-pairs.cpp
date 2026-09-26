@@ -20,9 +20,7 @@ public:
                     int v=mp[target]/2;
                     ans+=v;
                 }
-
             }
-            cout<<val<<" "<<ans<<endl;
         }
 
 
