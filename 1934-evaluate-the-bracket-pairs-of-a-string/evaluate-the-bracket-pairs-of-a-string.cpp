@@ -5,7 +5,6 @@ public:
         string ans="";
         unordered_map<string, string> mp;
         for(auto it: knowledge){
-            // cout<<it[0]<<" "<<it[1]<<endl;
             mp[it[0]]=it[1];
             
         }
