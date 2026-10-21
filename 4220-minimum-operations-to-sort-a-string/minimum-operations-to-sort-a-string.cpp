@@ -52,7 +52,6 @@ public:
     int minOperations(string s) {
         int first=firstMinOperation(s);
         int second=secondMinOperation(s);
-        cout<<first<<" "<<second<<endl;
         return min(first, second);
     }
 };
