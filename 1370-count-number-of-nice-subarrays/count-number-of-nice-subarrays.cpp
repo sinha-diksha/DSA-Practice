@@ -1,25 +1,24 @@
 class Solution {
 public:
 
-    int function(vector<int>& nums, int k){
-        int n=nums.size();
-        int l=0;
-        int r=0;
-        int oddCount=0;
-        int ans=0;
-        while(r<n){
-            int value=nums[r]%2;
-            oddCount+=value;
-            while(oddCount>k ){
-                oddCount-=(nums[l]%2);
-                l++;
-            }
-            ans+=r-l+1;
-            r++;
-        }
-        return ans;
-    }
+    
     int numberOfSubarrays(vector<int>& nums, int k) {
-        return function(nums,k) - function(nums,k-1);
+        int n=nums.size();
+        for(int i=0; i<n; i++){
+            nums[i]=nums[i]%2;
+        }
+
+        int ans=0;
+        unordered_map<int,int> mp;
+        mp[0]=1;
+        int prefSum=0;
+        for(auto it:nums){
+            prefSum+=it;
+            int find=prefSum-k;
+            ans+=mp[find];
+            mp[prefSum]++;
+        }
+
+        return ans;
     }
 };
