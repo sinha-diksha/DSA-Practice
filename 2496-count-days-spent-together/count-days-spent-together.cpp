@@ -1,37 +1,32 @@
 class Solution {
 public:
-    int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
+    pair<int,int> function(string arrive, string leave){
         vector<int> month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        int aliceArriveMonth = stoi(arriveAlice.substr(0,2));
-        int aliceArriveDate = stoi(arriveAlice.substr(3,2));
-        int aliceDepartDate = stoi(leaveAlice.substr(3,2));
-        int aliceDepartMonth = stoi(leaveAlice.substr(0,2));
-        cout<<aliceArriveMonth<<" "<<aliceArriveDate<<endl;
-        int aliceStartDay=0;
+        int personArriveMonth = stoi(arrive.substr(0,2));
+        int personArriveDate = stoi(arrive.substr(3,2));
+        int personDepartDate = stoi(leave.substr(3,2));
+        int personDepartMonth = stoi(leave.substr(0,2));
+        int personStartDay=0;
 
-        for(int i=0; i<aliceArriveMonth-1; i++){
-            aliceStartDay+=month[i];
+        for(int i=0; i<personArriveMonth-1; i++){
+            personStartDay+=month[i];
         }
-        aliceStartDay+=aliceArriveDate;
-        int aliceLeaveDay=0;
-        for(int i=0; i<aliceDepartMonth-1; i++){
-            aliceLeaveDay+=month[i];
+        personStartDay+=personArriveDate;
+        int personLeaveDay=0;
+        for(int i=0; i<personDepartMonth-1; i++){
+            personLeaveDay+=month[i];
         }
-        aliceLeaveDay+=aliceDepartDate;
-        int bobArriveMonth = stoi(arriveBob.substr(0,2));
-        int bobArriveDate = stoi(arriveBob.substr(3,2));
-        int bobDepartDate = stoi(leaveBob.substr(3,2));
-        int bobDepartMonth = stoi(leaveBob.substr(0,2));
-        int bobStartDay=0;
-        for(int i=0; i<bobArriveMonth-1; i++){
-            bobStartDay+=month[i];
-        }
-        bobStartDay+=bobArriveDate;
-        int bobLeaveDay=0;
-        for(int i=0; i<bobDepartMonth-1; i++){
-            bobLeaveDay+=month[i];
-        }
-        bobLeaveDay+=bobDepartDate;
+        personLeaveDay+=personDepartDate;
+
+        return {personStartDay, personLeaveDay};
+    }
+    int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
+        auto alice = function(arriveAlice, leaveAlice);
+        auto bob = function(arriveBob, leaveBob);
+        int aliceStartDay = alice.first;
+        int aliceLeaveDay = alice.second;
+        int bobStartDay = bob.first;
+        int bobLeaveDay = bob.second;
         int ans=0;
         for(int i=aliceStartDay; i<=aliceLeaveDay; i++){
             if(i>=bobStartDay && i<=bobLeaveDay){
