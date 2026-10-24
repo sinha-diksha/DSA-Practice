@@ -18,14 +18,10 @@ public:
             aliceLeaveDay+=month[i];
         }
         aliceLeaveDay+=aliceDepartDate;
-        
-
-
         int bobArriveMonth = stoi(arriveBob.substr(0,2));
         int bobArriveDate = stoi(arriveBob.substr(3,2));
         int bobDepartDate = stoi(leaveBob.substr(3,2));
         int bobDepartMonth = stoi(leaveBob.substr(0,2));
-        // cout<<aliceArriveMonth<<" "<<aliceArriveDate<<endl;
         int bobStartDay=0;
         for(int i=0; i<bobArriveMonth-1; i++){
             bobStartDay+=month[i];
@@ -37,7 +33,6 @@ public:
         }
         bobLeaveDay+=bobDepartDate;
         int ans=0;
-        cout<<aliceStartDay<<" "<<aliceLeaveDay<<" "<<bobLeaveDay<<" "<<bobStartDay<<endl;
         for(int i=aliceStartDay; i<=aliceLeaveDay; i++){
             if(i>=bobStartDay && i<=bobLeaveDay){
                 ans++;
