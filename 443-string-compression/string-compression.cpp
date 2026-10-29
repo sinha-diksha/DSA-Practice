@@ -9,9 +9,7 @@ public:
         while(j<=n){
             if(j==n || chars[j]!=chars[i]){
                 int val=j-i;
-                cout<<j<<endl;
                 int d=0;
-                
                 str+=chars[i] + ((val>1) ? to_string(val):"");
                 i=j;
             
