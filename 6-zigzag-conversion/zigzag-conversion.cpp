@@ -9,7 +9,6 @@ public:
             v[i].push_back(s[i]);
         }
         int zeroToEnd=false;
-        cout<<i<<endl;
         while(i<n){
             if(!zeroToEnd){
                 int j=numRows-2;
