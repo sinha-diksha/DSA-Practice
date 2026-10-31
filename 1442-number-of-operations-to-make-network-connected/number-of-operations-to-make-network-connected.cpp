@@ -34,7 +34,6 @@ public:
                 totalComponents++;
             }
         }
-        cout<<totalComponents<<endl;
         if(numEdges>=n-1){
             return totalComponents-1;
         }
