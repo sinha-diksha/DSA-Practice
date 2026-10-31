@@ -20,7 +20,7 @@ public:
         vector<int> vis(n,0);
         int numEdges=connections.size();
         vector<vector<int>> adjList(n);
-        for(int i=0; i<connections.size(); i++){
+        for(int i=0; i<numEdges; i++){
             int u=connections[i][0];
             int v=connections[i][1];
             
