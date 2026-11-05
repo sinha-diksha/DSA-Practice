@@ -13,7 +13,6 @@ public:
         }
         
         int start = isNewUsed ? 0 : 1;
-        cout<<start<<endl;
         for(int i=start; i<n; ){
              if(isNewUsed || intervals[i][0]<newInterval[0]){
                 if(ans.back()[1]>=intervals[i][0]){
