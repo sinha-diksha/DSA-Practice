@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     int maxSubArray(vector<int>& nums) {
         int n=nums.size();
         int sum=0;
@@ -10,7 +11,6 @@ public:
             if(sum<0){
                 sum=0;
             }
-            
         }
         return ans;
     }
